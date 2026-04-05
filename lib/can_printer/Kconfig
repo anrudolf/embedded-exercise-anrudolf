@@ -1,0 +1,39 @@
+menuconfig CAN_PRINTER
+	bool "Support for CAN printer"
+	depends on CAN
+	help
+	  Enables CAN printer for printing CAN messages.
+
+
+if CAN_PRINTER
+
+config CAN_PRINTER_START_MSG
+    bool "Print start message"
+
+config CAN_PRINTER_START_MSG_ID
+    hex "Print start message id"
+    default "0x040"
+    depends on CAN_PRINTER_START_MSG
+
+config CAN_PRINTER_STOP_MSG
+    bool "Print stop message"
+    
+config CAN_PRINTER_STOP_MSG_ID
+    hex "Print stop message id"
+    default "0x050"
+    depends on CAN_PRINTER_STOP_MSG
+
+config CAN_PRINTER_HELLO_MSG
+    bool "Print hello message"
+
+config CAN_PRINTER_HELLO_MSG_ID
+    hex "Print hello message id"
+    default "0x060"
+    depends on CAN_PRINTER_HELLO_MSG   
+
+
+module = CAN_PRINTER
+module-str = CAN printer logging
+source "subsys/logging/Kconfig.template.log_config"
+
+endif

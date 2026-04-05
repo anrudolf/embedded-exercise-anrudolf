@@ -1,0 +1,14 @@
+menu "CAN message printer app"
+
+config APP_CAN_LOOPBACK
+    bool "Start CAN in loopback mode"
+
+endmenu
+
+menu "Zephyr"
+source "Kconfig.zephyr"
+endmenu
+
+module = APP
+module-str = APP
+source "subsys/logging/Kconfig.template.log_config"

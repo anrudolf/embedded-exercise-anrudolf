@@ -1,0 +1,2 @@
+add_subdirectory_ifdef(CONFIG_CAN_PRINTER can_printer)
+add_subdirectory_ifdef(CONFIG_CAN_SENDER can_sender)

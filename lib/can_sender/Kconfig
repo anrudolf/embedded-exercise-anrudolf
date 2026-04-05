@@ -1,0 +1,42 @@
+menuconfig CAN_SENDER
+	bool "Support for CAN sender"
+	depends on CAN
+	help
+	  Enables CAN sender for sending periodic frames.
+
+
+if CAN_SENDER
+
+config CAN_SENDER_TX_0_MSG_ID
+    hex "TX message 0 id"
+    default "0x010"
+
+config CAN_SENDER_TX_0_MSG_PERIOD_MS
+    int "TX message 0 period (ms)"
+    default 500
+
+config CAN_SENDER_TX_1_MSG_ID
+    hex "TX message 1 id"
+    default "0x020"
+
+config CAN_SENDER_TX_1_MSG_PERIOD_MS
+    int "TX message 1 period (ms)"
+    default 1000
+
+config CAN_SENDER_TX_2_MSG_ID
+    hex "TX message 2 id"
+    default "0x030"
+
+config CAN_SENDER_TX_2_MSG_PERIOD_MS
+    int "TX message 2 period (ms)"
+    default 2000
+
+config CAN_SENDER_TX_0_MSG_PERIOD_MS
+    int "TX message 0 period (ms)"
+    default 100
+
+module = CAN_SENDER
+module-str = CAN sender logging
+source "subsys/logging/Kconfig.template.log_config"
+
+endif

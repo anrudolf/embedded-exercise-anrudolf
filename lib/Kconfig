@@ -1,0 +1,2 @@
+rsource "can_printer/Kconfig"
+rsource "can_sender/Kconfig"

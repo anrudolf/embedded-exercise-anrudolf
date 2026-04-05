@@ -1,0 +1,24 @@
+tests:
+  app.test:
+    tags: app
+    platform_allow:
+      - native_sim
+      - native_sim/native/64
+    integration_platforms:
+      - native_sim
+    harness: console
+    harness_config:
+      type: multi_line
+      regex:
+        # Note: the "random" data is deterministic because of CONFIG_TIMER_RANDOM_GENERATOR
+        - "TEST_BEGIN_MARKER"
+        - "\\(001050\\)       000   \\[8\\]  47 ac a3 0c 12 46 95 36"
+        - "\\(001100\\)       002   \\[8\\]  4a 5a b9 11 73 c7 81 6a"
+        - "\\(001350\\)       001   \\[8\\]  48 b3 5e 83 34 5e 35 de"
+        - "\\(001400\\)       000   \\[8\\]  aa 67 d7 ce 6b bb 6e 90"
+        - "\\(001650\\)       002   \\[8\\]  22 64 dd 18 fe 27 27 ee"
+        - "\\(001750\\)       000   \\[8\\]  2d 7f 37 c5 af 00 36 1d"
+        - "\\(001800\\)       001   \\[8\\]  0b 9e f7 d0 52 2e 30 93"
+        - "\\(002020\\)       200   \\[0\\]"
+        - "hello specialized"
+        - "TEST_END_MARKER"

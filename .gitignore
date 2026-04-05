@@ -1,0 +1,36 @@
+# Custom local project config
+**/prj.local.conf
+
+# CI build artifacts
+/build/
+/doc/build/
+
+# CLion
+.idea/
+cmake-build-*
+/application/*/build*
+
+# Python virtual env
+/venv/
+
+# Python cache
+__pycache__/
+
+# Qt Creator
+*.user
+build-*/
+
+# Ignore Libre Office lock files
+.~lock.*#
+
+# Twister results
+twister-out*
+
+# Vim swap files
+*.swp
+
+# mac files
+*.DS_Store
+
+# vs code files
+.vscode
